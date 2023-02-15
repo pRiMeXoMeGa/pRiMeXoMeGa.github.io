@@ -18,14 +18,15 @@ export class TodosApiService {
   getAuthenticated(loginData:any): Observable<any>{
     this.formdata.append('username', loginData.username);
     this.formdata.append('password',loginData.password);
-    return this.httpClient.post(this.apiURL+'login',this.formdata, {
+    return this.httpClient.post(this.apiURL+'login/',this.formdata, {
                                 headers:this.requestHeader,}).pipe(
                                   catchError(this.handleError)
                                 );
   }
 
+
   registerUser(userData:any):Observable<any>{
-    return this.httpClient.post(this.apiURL+'users',userData).pipe(
+    return this.httpClient.post(this.apiURL+'users/',userData).pipe(
       catchError(this.handleError)
     );
   }
