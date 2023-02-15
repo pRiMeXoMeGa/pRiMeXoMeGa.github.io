@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiURL: 'http://127.0.0.1:8000/'
+  // apiURL:'http://157.245.203.152:8000/'
+    //  apiURL:'https://www.apimarketaqib.online/'
 };
 
 /*
