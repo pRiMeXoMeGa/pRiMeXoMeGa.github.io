@@ -18,7 +18,7 @@ export class TodosApiService {
   getAuthenticated(loginData:any): Observable<any>{
     this.formdata.append('username', loginData.username);
     this.formdata.append('password',loginData.password);
-    return this.httpClient.post(this.apiURL+'login/',this.formdata, {
+    return this.httpClient.post(this.apiURL+'login',this.formdata, {
                                 headers:this.requestHeader,}).pipe(
                                   catchError(this.handleError)
                                 );
@@ -71,7 +71,7 @@ export class TodosApiService {
   }
 
   addUsertoCategory(user_detail:any):Observable<any>{
-    return this.httpClient.post(this.apiURL+'category/addUserToCategory/', user_detail).pipe(
+    return this.httpClient.post(this.apiURL+'category/addUserToCategory', user_detail).pipe(
       // tap(todos_details=>console.log('All',JSON.stringify(todos_details))),
       catchError(this.handleError)
     );
@@ -82,7 +82,7 @@ export class TodosApiService {
 
   // used in Category Component
   getCategories():Observable<any>{
-    return this.httpClient.get(this.apiURL+'category').pipe(
+    return this.httpClient.get(this.apiURL+'category/').pipe(
       // tap(categories_detail=>console.log('All',JSON.stringify(categories_detail))),
       catchError(this.handleError)
     );

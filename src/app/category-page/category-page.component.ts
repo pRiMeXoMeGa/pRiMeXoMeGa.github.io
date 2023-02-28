@@ -66,6 +66,7 @@ export class CategoryPageComponent implements OnInit, OnDestroy {
                 next: (res:any) => {
                     this.categoryList = res;
                     this.filteredCategory = this.categoryList.categories;
+                    console.log(this.filteredCategory);
                 },
                 error: (err:any)=>{
                   alert(err);

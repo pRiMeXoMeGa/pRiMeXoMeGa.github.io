@@ -49,7 +49,8 @@
 
                         <td>
                             <span *ngFor="let share of category.sharedWith">
-                                <span *ngIf="share.id!=category.user_id">
+                                <!-- <span *ngIf="share.id!=category.user_id"> -->
+                                <span>
                                     {{share.email}} 
                                     <a class="btn" 
                                     (click)="deleteUserFromCategory(share.email, category.id)">
